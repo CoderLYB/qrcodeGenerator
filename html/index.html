@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+<title>二维码生成</title>
+<meta charset="utf-8">
+</head>
+<body>
+<div id="output"></div>
+<script src="../jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../jquery.qrcode.min.js"></script>
+<input type="text" id="url">
+<button onclick="generate()">生成</button>
+<script>
+
+function generate(){
+	jQuery(function(){
+		var url = jQuery('#url').val();
+		if(url.substring(0,3)!="http"){
+			url = "http://".concat(url);
+		}
+		jQuery('#output').qrcode(url);
+	})
+}
+
+</script>
+
+</body>
+</html>
